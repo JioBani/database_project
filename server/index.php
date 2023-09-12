@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // 데이터 읽기
-$sql = "SELECT * FROM music";
+$sql = "SELECT * FROM songs";
 $result = $conn->query($sql);
 
 $data = array();
