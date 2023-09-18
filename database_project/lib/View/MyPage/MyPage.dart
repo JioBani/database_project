@@ -1,8 +1,11 @@
 import 'package:database_project/Common/DubleTapExitWidget.dart';
 import 'package:database_project/Style/color_schemes.g.dart';
 import 'package:database_project/View/CustomBottomNavBar.dart';
+import 'package:database_project/View/RegistrationPage/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class MyPage extends StatelessWidget {
   const MyPage({super.key});
@@ -60,7 +63,9 @@ class MyPage extends StatelessWidget {
                         ),
                         SizedBox(height: 50,),
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Get.to(RegistrationPage());
+                          },
                           child: Text(
                             "회원가입하기",
                             style: TextStyle(
