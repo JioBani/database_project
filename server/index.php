@@ -12,6 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
 // 데이터 읽기
 $sql = "SELECT * FROM songs";
 $result = $conn->query($sql);
@@ -30,4 +31,6 @@ echo json_encode($data);
 
 // 연결 닫기
 $conn->close();
+
+//r
 ?>

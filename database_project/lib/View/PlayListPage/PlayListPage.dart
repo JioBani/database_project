@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-const String tempImage = "https://i.namu.wiki/i/-elQj1PY77ZvaYOvP-RxfqDn_LH7SYjor-WOtC9SGoX1hJdS0FWnPZ91l3Rz12yFWAMQgq70Dqd-JxXMzyK1764y8BIZZEiBnfnhqf4nyizgX4PTB3pyBC9BbV63z_HAgmHcBgTRQfzifr-qCRyIlg.webp";
+const String tempImage = "https://ibighit.com/bts/images/bts/discography/butter/butter-cover.jpg";
 
 class PlayListPage extends StatelessWidget {
   const PlayListPage({super.key});
@@ -58,13 +58,11 @@ class PlayListPage extends StatelessWidget {
                   List<Music> musics = snapshot.data!;
                   // 데이터를 받아와서 ListView에 표시
 
-                  return Expanded(
-                    child: ListView.builder(
-                      itemCount:  musics.length,
-                      itemBuilder: (context , index){
-                        return PlaylistElementWidget(music: musics[index]);
-                      }
-                    ),
+                  return ListView.builder(
+                    itemCount:  musics.length,
+                    itemBuilder: (context , index){
+                      return PlaylistElementWidget(music: musics[index]);
+                    }
                   );
                 }
               },
@@ -85,11 +83,15 @@ class PlaylistElementWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network(
-        tempImage,
-        fit: BoxFit.cover,
-        width: 100,
-        height: 100,
+      leading: SizedBox(
+        width: 50.w,
+        height: 50.w,
+        child: Image.network(
+          tempImage,
+          fit: BoxFit.cover,
+          width: 100,
+          height: 100,
+        ),
       ),
       title: Text(
         music.name,
