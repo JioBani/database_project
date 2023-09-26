@@ -1,6 +1,7 @@
 import 'package:database_project/Common/DubleTapExitWidget.dart';
 import 'package:database_project/Style/color_schemes.g.dart';
 import 'package:database_project/View/CustomBottomNavBar.dart';
+import 'package:database_project/View/LoginPage/LoginPage.dart';
 import 'package:database_project/View/RegistrationPage/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +46,9 @@ class MyPage extends StatelessWidget {
                               ),
                             ),
                             IconButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                Get.to(LoginPage());
+                              },
                               icon: Icon(
                                 Icons.keyboard_arrow_right,
                                 size : 30.sp

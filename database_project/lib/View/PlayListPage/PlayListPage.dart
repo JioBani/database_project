@@ -2,8 +2,10 @@ import 'package:database_project/Common/DubleTapExitWidget.dart';
 import 'package:database_project/Model/Music.dart';
 import 'package:database_project/Style/color_schemes.g.dart';
 import 'package:database_project/View/CustomBottomNavBar.dart';
+import 'package:database_project/View/MusicPlayPage/MusicPlayPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -83,6 +85,9 @@ class PlaylistElementWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: (){
+        Get.to(MusicPlayPage());
+      },
       leading: SizedBox(
         width: 50.w,
         height: 50.w,
