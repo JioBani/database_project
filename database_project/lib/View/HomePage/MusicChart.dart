@@ -58,7 +58,6 @@ class MusicChart extends StatelessWidget {
                           ),
                         );
                       }
-
                       return Column(
                         children: musicList,
                       );
