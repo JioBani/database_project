@@ -3,7 +3,9 @@ import 'package:database_project/Style/color_schemes.g.dart';
 import 'package:database_project/View/BottomNavBar/BottomNavBar.dart';
 import 'package:database_project/View/CustomBottomNavBar.dart';
 import 'package:database_project/View/HomePage/MusicChart.dart';
+import 'package:database_project/View/PageViewTest/PageViewTest.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:logger/logger.dart';
 
@@ -26,16 +28,17 @@ class _HomePageState extends State<HomePage> {
         body: SafeArea(
           child: Column(
             children: [
-              Expanded(
-                child: ListView(
-                  children: [
-                    CustomSearchBar(),
-                    Recommended(),
-                    MusicChart(),
-                  ],
-                ),
+              TextButton(
+                onPressed: (){
+                  Get.to(PageViewTest());
+                },
+                child: Text(
+                  "ㅎㅇ"
+                )
               ),
-              BottomNavBar(),
+              CustomSearchBar(),
+              Recommended(),
+              MusicChart(),
             ],
           ),
         ),

@@ -8,7 +8,6 @@ import 'package:get/get_core/src/get_main.dart';
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({super.key});
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -19,23 +18,23 @@ class RegistrationPage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: IconButton(
-                    onPressed: (){
-                      Get.back();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios_rounded,
-                      size: 30.sp,
-                    ),
+                  onPressed: (){
+                    Get.back();
+                  },
+                  icon: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    size: 30.sp,
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 30.h,),
+            SizedBox(height: 50.h,),
             Padding(
               padding: EdgeInsets.fromLTRB(30.w, 0 , 0, 0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                "회원가입",
+                  "회원가입",
                   style: TextStyle(
                       fontSize: 25.sp,
                       fontWeight: FontWeight.w700
@@ -45,17 +44,43 @@ class RegistrationPage extends StatelessWidget {
             ),
             SizedBox(height: 30.h,),
             CustomInputFieldWidget(content: "이름",),
-            SizedBox(height: 10.h,),
+            SizedBox(height: 20.h,),
             CustomInputFieldWidget(content: "아이디",),
-            SizedBox(height: 10.h,),
-            CustomInputFieldWidget(content: "생년월일",),
-            SizedBox(height: 10.h,),
-            CustomInputFieldWidget(content: "비밀번호",),
-            SizedBox(height: 10.h,),
-            CustomInputFieldWidget(content: "비밀번호확인",),
-            Expanded(child: SizedBox(),),
+            SizedBox(height: 20.h,),
+            CustomInputFieldWidget(content: "비빌번호",),
+            SizedBox(height: 20.h,),
+            CustomInputFieldWidget(content: "비밀번호 확인",),
+            SizedBox(height: 20.h,),
             Padding(
-              padding:EdgeInsets.only(left: 10.w , right: 10.w),
+              padding: EdgeInsets.fromLTRB(30.w, 0 , 0, 0),
+              child: Row(
+                children: [
+                  Text(
+                    "아이디가 있으신가요?",
+                    style: TextStyle(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.grey
+                    ),
+                  ),
+                  SizedBox(width: 10.w,),
+                  TextButton(
+                      onPressed: (){},
+                      child: Text(
+                        "로그인",
+                        style: TextStyle(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black
+                        ),
+                      )
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Padding(
+              padding:EdgeInsets.only(left: 20.w , right: 20.w),
               child: InkWell(
                 onTap: (){
 
@@ -64,26 +89,25 @@ class RegistrationPage extends StatelessWidget {
                   width: double.infinity,
                   height: 50.h,
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent,
-                    borderRadius: BorderRadius.circular(30.r),
-                    boxShadow: [
-                      ShadowPalette.defaultShadowLight
-                    ]
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(5.r),
+                      boxShadow: [
+                        ShadowPalette.defaultShadowLight
+                      ]
                   ),
                   child: Center(
                     child: Text(
                       "회원가입하기",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w700
+                          color: Colors.white,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 50.h,)//GenderSelectWidget()
           ],
         ),
       ),
@@ -101,12 +125,17 @@ class CustomInputFieldWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.fromLTRB(10.w, 0, 10.w, 0),
+          padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0),
           child: TextField(
             decoration: InputDecoration(
-              labelText: content,
-              prefixIcon: Icon(Icons.person),
-              border:  UnderlineInputBorder(),
+                filled: true,
+                fillColor:  Colors.black12,
+                hintText: content,
+                contentPadding: EdgeInsets.symmetric(vertical: 20.h , horizontal: 10.w),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: BorderSide.none, // border 없애기
+                )
             ),
           ),
         ),
