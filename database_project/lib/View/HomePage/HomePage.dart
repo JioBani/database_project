@@ -1,5 +1,6 @@
 import 'package:database_project/Common/DubleTapExitWidget.dart';
 import 'package:database_project/Style/color_schemes.g.dart';
+import 'package:database_project/View/BottomNavBar/BottomNavBar.dart';
 import 'package:database_project/View/CustomBottomNavBar.dart';
 import 'package:database_project/View/HomePage/MusicChart.dart';
 import 'package:flutter/material.dart';
@@ -22,25 +23,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return DoubleTapExitWidget(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: M3ColorScheme.dark.primary,
-          title: Text(
-              'JSON 데이터 표시',
-            style: TextStyle(
-              color: M3ColorScheme.dark.onPrimary
-            ),
-          ),
-        ),
         body: SafeArea(
-          child: ListView(
+          child: Column(
             children: [
-              CustomSearchBar(),
-              Recommended(),
-              MusicChart(),
+              Expanded(
+                child: ListView(
+                  children: [
+                    CustomSearchBar(),
+                    Recommended(),
+                    MusicChart(),
+                  ],
+                ),
+              ),
+              BottomNavBar(),
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
       ),
     );
   }
