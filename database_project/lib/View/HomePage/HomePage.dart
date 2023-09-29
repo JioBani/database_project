@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     return DoubleTapExitWidget(
       child: Scaffold(
         body: SafeArea(
-          child: Column(
+          child: ListView(
             children: [
               TextButton(
                 onPressed: (){
@@ -42,6 +42,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        bottomNavigationBar: BottomNavBar(),
       ),
     );
   }

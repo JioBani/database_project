@@ -21,53 +21,51 @@ class MusicChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.fromLTRB(0, 20.h, 0, 0),
-        padding: EdgeInsets.fromLTRB(10.w, 0, 10.w, 0),
-        child: Column(
-          children: [
-            Text(
-              "인기차트",
-              style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700
-              ),
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 20.h, 0, 0),
+      padding: EdgeInsets.fromLTRB(10.w, 0, 10.w, 0),
+      child: Column(
+        children: [
+          Text(
+            "인기차트",
+            style: TextStyle(
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700
             ),
-            FutureBuilder(
-              future: fetchData(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  // 데이터를 아직 받아오지 못한 경우 로딩 표시
-                  return Center(child: CircularProgressIndicator());
-                } else if (snapshot.hasError) {
-                  // 오류가 발생한 경우 오류 메시지 표시
-                  return Center(child: Text('오류: ${snapshot.error}'));
-                } else {
-                  List<Music> musics = snapshot.data!;
-                  // 데이터를 받아와서 ListView에 표시
-                  return Builder(
-                    builder: (context) {
-                      List<Widget> musicList = [];
+          ),
+          FutureBuilder(
+            future: fetchData(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                // 데이터를 아직 받아오지 못한 경우 로딩 표시
+                return Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                // 오류가 발생한 경우 오류 메시지 표시
+                return Center(child: Text('오류: ${snapshot.error}'));
+              } else {
+                List<Music> musics = snapshot.data!;
+                // 데이터를 받아와서 ListView에 표시
+                return Builder(
+                  builder: (context) {
+                    List<Widget> musicList = [];
 
-                      for (int i = 0; i < musics.length; i++) {
-                        musicList.add(
-                          ListTile(
-                            title: Text(musics[i].name),
-                            subtitle: Text(musics[i].composer),
-                          ),
-                        );
-                      }
-                      return Column(
-                        children: musicList,
+                    for (int i = 0; i < musics.length; i++) {
+                      musicList.add(
+                        ListTile(
+                          title: Text(musics[i].name),
+                          subtitle: Text(musics[i].composer),
+                        ),
                       );
                     }
-                  );
-                }
-              },
-            ),
-          ],
-        ),
+                    return Column(
+                      children: musicList,
+                    );
+                  }
+                );
+              }
+            },
+          ),
+        ],
       ),
     );
   }

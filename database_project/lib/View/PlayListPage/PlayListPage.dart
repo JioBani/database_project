@@ -116,11 +116,10 @@ class PlayListPage extends StatelessWidget {
                   ),*/
                 ),
               ),
-              BottomNavBar()
             ],
           )
         ),
-        //bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: BottomNavBar(),
       ),
     );
   }

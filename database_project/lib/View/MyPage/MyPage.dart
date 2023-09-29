@@ -1,6 +1,5 @@
 import 'package:database_project/Common/DubleTapExitWidget.dart';
-import 'package:database_project/Style/color_schemes.g.dart';
-import 'package:database_project/View/CustomBottomNavBar.dart';
+import 'package:database_project/View/BottomNavBar/BottomNavBar.dart';
 import 'package:database_project/View/LoginPage/LoginPage.dart';
 import 'package:database_project/View/RegistrationPage/RegistrationPage.dart';
 import 'package:flutter/material.dart';
@@ -23,13 +22,13 @@ class MyPage extends StatelessWidget {
                 ),
                 child: Container(
                   width: double.infinity,
-                  color: M3ColorScheme.dark.secondary,
+                  color: Colors.black,
                   padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 20.h),
                   child: DefaultTextStyle(
                     style:  TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
-                      color: M3ColorScheme.dark.onSecondary
+                      color: Colors.white
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +50,8 @@ class MyPage extends StatelessWidget {
                               },
                               icon: Icon(
                                 Icons.keyboard_arrow_right,
-                                size : 30.sp
+                                size : 30.sp,
+                                color: Colors.white,
                               )
                             )
                           ],
@@ -74,7 +74,7 @@ class MyPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w700,
-                              color: M3ColorScheme.dark.onPrimary
+                              color : Colors.white
                             ),
                           )
                         )
@@ -82,11 +82,11 @@ class MyPage extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        bottomNavigationBar: BottomNavBar(),
       ),
     );
   }

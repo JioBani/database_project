@@ -37,7 +37,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
           IconButton(
             padding: EdgeInsets.zero,
             onPressed: (){
-              Get.to(HomePage());
+              Get.offAll(
+                HomePage(),
+                transition: Transition.cupertino
+              );
             },
             icon: Center(
               child: SvgPicture.asset(
@@ -51,11 +54,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
           IconButton(
             padding: EdgeInsets.zero,
             onPressed: (){
-              Get.to(PlayListPage());
+              Get.offAll(
+                PlayListPage(),
+                transition: Transition.cupertino
+              );
             },
             icon: Center(
               child: SvgPicture.asset(
-                "assets/images/home.svg",
+                "assets/images/playlist.svg",
                 width: 35.sp,
                 height: 35.sp,
                 color: Colors.black,
@@ -65,25 +71,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
           IconButton(
             padding: EdgeInsets.zero,
             onPressed: (){
-              Get.to(MyPage());
+              Get.offAll(
+                MyPage(),
+                transition: Transition.cupertino
+              );
             },
             icon: Center(
               child: SvgPicture.asset(
-                "assets/images/home.svg",
-                width: 35.sp,
-                height: 35.sp,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          IconButton(
-            padding: EdgeInsets.zero,
-            onPressed: (){
-              Get.to(MyPage());
-            },
-            icon: Center(
-              child: SvgPicture.asset(
-                "assets/images/home.svg",
+                "assets/images/profile.svg",
                 width: 35.sp,
                 height: 35.sp,
                 color: Colors.black,
