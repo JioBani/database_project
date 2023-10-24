@@ -60,6 +60,7 @@ dependencies:
   palette_generator:
   simple_shadow:
   flutter_svg:
+  card_swiper:
 
 dev_dependencies:
   flutter_test:
