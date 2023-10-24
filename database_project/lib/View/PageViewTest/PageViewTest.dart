@@ -1,3 +1,5 @@
+import 'package:card_swiper/card_swiper.dart';
+import 'package:database_project/Common/ImageUrls.dart';
 import 'package:database_project/Style/ShadowPalette.dart';
 import 'package:database_project/View/HomePage/CustomSearchBar.dart';
 import 'package:database_project/View/HomePage/MusicChart.dart';
@@ -22,7 +24,74 @@ class _PageViewTestState extends State<PageViewTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: Container(
+            color: Colors.white,
+            child: new LayoutBuilder(builder: (context, constraint) {
+              return new Swiper(
+                loop: true,
+                pagination: new SwiperPagination(),
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index){
+                  return ClipRRect(
+                    borderRadius: BorderRadius.circular(15.r),
+                    child: Image.network(
+                      ImageUrls.playlistCover02,
+                      fit: BoxFit.fill,
+                    ),
+                  );
+                },
+                viewportFraction: 0.8,
+                scale: 0.9,
+                layout: SwiperLayout.STACK,
+                itemWidth: constraint.biggest.width*0.8,
+                itemHeight: constraint.biggest.height*0.8,
+                index: 1,
+              );
+            })
+        ),
+        /*child: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 40.h,),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20.w),
+                  child: Text(
+                    "Playlist",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 34.sp
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 25.h,),
+              *//*Container(
+                width: 320.w,
+                height: 320.w,
+                child: Swiper(
+                  itemBuilder: (BuildContext context, int index) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(15.r),
+                      child: Image.network(
+                        ImageUrls.playlistCover02,
+                        fit: BoxFit.fill,
+                      ),
+                    );
+                  },
+                  itemCount: 10,
+                  viewportFraction: 0.8, // 전체 슬라이드 아이템 크기
+                  scale: 0.85,
+                  loop: false,
+                ),
+              ),*//*
+            ],
+          ),
+        )*/
+
+
+        /*child: Column(
           children: [
             SizedBox(height: 30.h,),
             CustomSearchBar(),
@@ -44,11 +113,11 @@ class _PageViewTestState extends State<PageViewTest> {
                         },
                         itemBuilder: (context, index) {
                           var _scale = _currentIndex == index ? 1.0 : 0.8;
-                          /*return Container(
+                          *//*return Container(
                             width: 200,
                             height: 300,
                             color: Colors.deepOrangeAccent,
-                          );*/
+                          );*//*
                           return TweenAnimationBuilder(
                             tween: Tween(begin: _scale, end: _scale),
                             duration: const Duration(milliseconds: 350),
@@ -73,9 +142,8 @@ class _PageViewTestState extends State<PageViewTest> {
               }
             ),
             SizedBox(height: 20.h,),
-            MusicChart(),
           ],
-        ),
+        ),*/
       ),
     );
   }

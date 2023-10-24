@@ -1,6 +1,7 @@
 import 'package:database_project/View/HomePage/HomePage.dart';
 import 'package:database_project/View/MyPage/MyPage.dart';
 import 'package:database_project/View/PlayListPage/PlayListPage.dart';
+import 'package:database_project/View/PlaylistLibraryPage/PlaylistLibraryPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -55,7 +56,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             padding: EdgeInsets.zero,
             onPressed: (){
               Get.offAll(
-                PlayListPage(),
+                PlaylistLibraryPage(),
                 transition: Transition.cupertino
               );
             },

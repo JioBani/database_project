@@ -1,5 +1,6 @@
 import 'package:database_project/Controller/CustomBottomNavigationBarController.dart';
 import 'package:database_project/View/HomePage/HomePage.dart';
+import 'package:database_project/View/PlaylistLibraryPage/PlaylistLibraryPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -32,7 +33,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                     transition: Transition.noTransition,
                   );
                   case 1 : Get.off(
-                    PlayListPage(),
+                    PlaylistLibraryPage(),
                     transition: Transition.noTransition,
                   );
                   case 2 : Get.off(
