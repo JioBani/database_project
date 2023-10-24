@@ -80,13 +80,14 @@ class PlayListPage extends StatelessWidget {
                     //color: Color(0xffEBC7E4)
                   ),
                   child: ListView.builder(
-                      itemCount:  10,
+                      itemCount:  5,
                       itemBuilder: (context , index){
                         Music music = Music(id: "id", name: "name", composer: "composer");
-                        if(index % 3 == 0) return PlaylistElementWidget(music: music , imageUrl: tempImage,);
-                        else if(index % 3 == 1) return PlaylistElementWidget(music: music , imageUrl: orangeImage,);
-                        else if(index % 4 == 2) return PlaylistElementWidget(music: music , imageUrl: newj,);
-                        else return PlaylistElementWidget(music: music , imageUrl: newj,);
+
+                        if(index % 3 == 0) return MusicElementWidget(music: music , imageUrl: tempImage,);
+                        else if(index % 3 == 1) return MusicElementWidget(music: music , imageUrl: orangeImage,);
+                        else if(index % 4 == 2) return MusicElementWidget(music: music , imageUrl: newj,);
+                        else return MusicElementWidget(music: music , imageUrl: newj,);
                       }
                   ),
                   /*child: FutureBuilder(
@@ -125,8 +126,8 @@ class PlayListPage extends StatelessWidget {
   }
 }
 
-class PlaylistElementWidget extends StatelessWidget {
-  const PlaylistElementWidget({super.key, required this.music, required this.imageUrl});
+class MusicElementWidget extends StatelessWidget {
+  const MusicElementWidget({super.key, required this.music, required this.imageUrl});
 
   final Music music;
   final String imageUrl;
@@ -173,7 +174,13 @@ class PlaylistElementWidget extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            Expanded(child: SizedBox()),
+            IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.more_horiz)
+            ),
+            SizedBox(width: 5.w,)
           ],
         ),
       ),
