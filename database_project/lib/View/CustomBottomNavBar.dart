@@ -33,7 +33,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                     transition: Transition.noTransition,
                   );
                   case 1 : Get.off(
-                    PlaylistLibraryPage(),
+                    PlayListLibraryPage(),
                     transition: Transition.noTransition,
                   );
                   case 2 : Get.off(

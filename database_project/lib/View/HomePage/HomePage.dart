@@ -1,13 +1,11 @@
 import 'package:database_project/Common/DubleTapExitWidget.dart';
-import 'package:database_project/Style/color_schemes.g.dart';
+import 'package:database_project/GetxTest/GetxTestPage.dart';
 import 'package:database_project/View/BottomNavBar/BottomNavBar.dart';
-import 'package:database_project/View/CustomBottomNavBar.dart';
 import 'package:database_project/View/HomePage/MusicChart.dart';
-import 'package:database_project/View/PageViewTest/PageViewTest.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'package:logger/logger.dart';
 
 import 'CustomSearchBar.dart';
 import 'Recommended.dart';
@@ -28,17 +26,11 @@ class _HomePageState extends State<HomePage> {
         body: SafeArea(
           child: ListView(
             children: [
-              TextButton(
-                onPressed: (){
-                  Get.to(PageViewTest());
-                },
-                child: Text(
-                  "ㅎㅇ"
-                )
-              ),
               CustomSearchBar(),
               Recommended(),
+              SizedBox(height: 15.h,),
               MusicChart(),
+              SizedBox(height: 60.h,)
             ],
           ),
         ),

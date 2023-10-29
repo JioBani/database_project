@@ -56,7 +56,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             padding: EdgeInsets.zero,
             onPressed: (){
               Get.offAll(
-                PlaylistLibraryPage(),
+                PlayListLibraryPage(),
                 transition: Transition.cupertino
               );
             },

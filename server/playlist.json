@@ -1,0 +1,98 @@
+{
+    "data" : [
+        {
+            "name" : "팝송",
+            "imageUrl" : "",
+            "musicList" : [
+                {
+                    "id" : "1",
+                    "name" : "노래1",
+                    "composer" : "작곡가1"
+                },
+                {
+                    "id" : "2",
+                    "name" : "노래2",
+                    "composer" : "작곡가2"
+                },
+                {
+                    "id" : "3",
+                    "name" : "노래3",
+                    "composer" : "작곡가3"
+                },
+                {
+                    "id" : "4",
+                    "name" : "노래4",
+                    "composer" : "작곡가4"
+                },
+                {
+                    "id" : "5",
+                    "name" : "노래5",
+                    "composer" : "작곡가5"
+                }
+            ]
+        },
+        {
+            "name" : "발라드",
+            "imageUrl" : "",
+            "musicList" : [
+                {
+                    "id" : "1",
+                    "name" : "노래1",
+                    "composer" : "작곡가1"
+                },
+                {
+                    "id" : "2",
+                    "name" : "노래2",
+                    "composer" : "작곡가2"
+                },
+                {
+                    "id" : "3",
+                    "name" : "노래3",
+                    "composer" : "작곡가3"
+                },
+                {
+                    "id" : "4",
+                    "name" : "노래4",
+                    "composer" : "작곡가4"
+                },
+                {
+                    "id" : "5",
+                    "name" : "노래5",
+                    "composer" : "작곡가5"
+                }
+            ]
+        },
+        {
+            "name" : "클래식",
+            "imageUrl" : "",
+            "musicList" : [
+                {
+                    "id" : "1",
+                    "name" : "노래1",
+                    "composer" : "작곡가1"
+                },
+                {
+                    "id" : "2",
+                    "name" : "노래2",
+                    "composer" : "작곡가2"
+                },
+                {
+                    "id" : "3",
+                    "name" : "노래3",
+                    "composer" : "작곡가3"
+                },
+                {
+                    "id" : "4",
+                    "name" : "노래4",
+                    "composer" : "작곡가4"
+                },
+                {
+                    "id" : "5",
+                    "name" : "노래5",
+                    "composer" : "작곡가5"
+                }
+            ]
+        }
+    ]
+    
+}

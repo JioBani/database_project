@@ -1,4 +1,6 @@
+import 'package:database_project/Common/ImageUrls.dart';
 import 'package:database_project/Model/Music.dart';
+import 'package:database_project/View/MusicElementWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
@@ -33,6 +35,7 @@ class MusicChart extends StatelessWidget {
               fontWeight: FontWeight.w700
             ),
           ),
+          SizedBox(height: 20.h,),
           FutureBuilder(
             future: fetchData(),
             builder: (context, snapshot) {
@@ -51,14 +54,14 @@ class MusicChart extends StatelessWidget {
 
                     for (int i = 0; i < musics.length; i++) {
                       musicList.add(
-                        ListTile(
-                          title: Text(musics[i].name),
-                          subtitle: Text(musics[i].composer),
-                        ),
+                        MusicElementWidget(music: musics[i], imageUrl: ImageUrls.coverImage01_butter)
                       );
                     }
-                    return Column(
-                      children: musicList,
+                    return Padding(
+                      padding: EdgeInsets.only(left: 10.w , right: 10.w),
+                      child: Column(
+                        children: musicList,
+                      ),
                     );
                   }
                 );
